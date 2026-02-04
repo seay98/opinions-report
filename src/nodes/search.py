@@ -8,7 +8,7 @@ from langchain_core.messages import ToolMessage
 
 from src.workflow.state import WorkflowState
 from src.models.llm import get_llm
-from src.tools.search_tool import get_search_tool
+from src.tools.search_tool import search_tavily
 from config.settings import MAX_SEARCH_COUNT
 
 
@@ -96,7 +96,7 @@ def search_node(state: WorkflowState) -> dict:
         print(f"[搜索节点] 正在启动搜索 Agent，主题: {query}")
 
         llm = get_llm()
-        search_tool = get_search_tool()
+        search_tool = search_tavily()
 
         agent = create_react_agent(
             model=llm,

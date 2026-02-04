@@ -4,7 +4,7 @@ from langchain_tavily import TavilySearch
 from config.settings import TAVILY_API_KEY
 
 
-def get_search_tool() -> TavilySearch:
+def search_tavily() -> TavilySearch:
     """
     获取配置好的 Tavily 搜索工具实例
 
